@@ -10,7 +10,8 @@
             "order_id": "UA830970703AE",
             "email": "abdelrhmatta@gmail.com",
             "last_status": "no data yet",
-            "last_update": "N/A"
+            "last_update": "N/A",
+            "is_updated": false
         }
     ]
 }
