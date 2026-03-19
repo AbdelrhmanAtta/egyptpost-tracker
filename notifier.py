@@ -3,16 +3,15 @@ import ssl
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
 load_dotenv()
 
 def main():
-    # Get credentials from environment variables
     email = os.getenv("EMAIL")
     password = os.getenv("PASSWORD")
+    reciverEmail = os.getenv("RECIVER_EMAIL")
     
-    if not email or not password:
-        print("Error: EMAIL and PASSWORD must be set in .env file")
+    if not email or not password or not reciverEmail:
+        print("Error: All environment variables (EMAIL, PASSWORD, RECIVER_EMAIL) must be set in .env file")
         return
     
     try:
@@ -23,7 +22,7 @@ def main():
             server.login(email, password)
             print("Login successful!")
             # Email logic goes here!!
-            server.sendmail(email ,"abdelrhmatta@gmail.com", "dang")
+            server.sendmail(email ,reciverEmail, "dang")
     
     except smtplib.SMTPAuthenticationError as e:
         print(f"Authentication failed: {e}")
